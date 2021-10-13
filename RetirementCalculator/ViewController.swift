@@ -20,7 +20,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Crashes.hasCrashedInLastSession {
+            let alert = UIAlertController(title: "Oooops", message: "Sorry about that, an error occured", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
 
     @IBAction func calculateResult(_ sender: UIButton) {

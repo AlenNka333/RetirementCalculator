@@ -14,9 +14,7 @@ import AppCenterCrashes
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        AppCenter.logLevel = .verbose
         AppCenter.start(withAppSecret: "76793301-8b6f-4ca5-bedd-102737655777", services: [Analytics.self, Crashes.self])
-        
         return true
     }
 
